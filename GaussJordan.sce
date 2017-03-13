@@ -1,22 +1,21 @@
-//Código de Gauss-Jordan.
-function [ X ] = gj( A, b )
+//Código de Método de Eliminación de Gauss-Jordan en Scilab
 
-C=[A b]; //Matriz aumentada
-m = length(C(:,1))
+//Matriz de coeficientes de sistema de ecuaciones.
+a=[5,-2, 2;4, 8, -2; 3, 9, -5]
 
-for i=1:m
-  if C(i,i) ~= 1
-      //Se divide la fila entera entre C(i,i)
-      C(i,:)= C(i,:) ./ C(i,i);  
-  end
+ // 5x -2y + 2z = 7
+ // 4x +8y -2z = 6
+ // 3x + 9y - 5z = 12
 
-  for n=1:m
-    if n ~= i
-        //Se iguala a cero.
-        C(n,:) = -C(n,i) .* C(i,:) + C(n,:); 
-    end
-  end
-end
+//Matriz de constantes del sistema de ecuaciones.
+b=[10;16;9]
 
-X = C(:, end);
-end  % gj
+//Matriz aumentada
+AumAb=[a b]
+
+
+//Gauss-Jordan
+rref(aumAB)
+ 
+//La matriz resultante contiene las soluciones 
+//para cada una de las incógnitas del sistema.
